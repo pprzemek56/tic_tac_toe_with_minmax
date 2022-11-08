@@ -15,7 +15,7 @@ def main():
 def game():
     print("WELLCOME IN TIC TAC TOE")
     while True:
-        print("CHOSE 1 FOR MULTI PLAYER GAME")
+        print("CHOSE 1 FOR MULTIPLAYER GAME")
         print("CHOSE 2 FOR SINGLE PLAYER GAME")
         print("CHOSE 0 FOR END GAME")
         chose_game = input()
@@ -25,7 +25,7 @@ def game():
             case "2":
                 singleplayer.game()
             case "0":
-                print("Thank you for playing!")
+                print("Thank you, for playing!")
                 sys.exit()
             case other:
                 print("No match found")

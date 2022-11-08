@@ -1,3 +1,8 @@
+import sys
+
+import multiplayer
+import singleplayer
+
 BOARD = [[" ", " ", " "],
          [" ", " ", " "],
          [" ", " ", " "]]
@@ -8,7 +13,24 @@ def main():
 
 
 def game():
-    print_board()
+    print("WELLCOME IN TIC TAC TOE")
+    while True:
+        print("CHOSE 1 FOR MULTI PLAYER GAME")
+        print("CHOSE 2 FOR SINGLE PLAYER GAME")
+        print("CHOSE 0 FOR END GAME")
+        chose_game = input()
+        match chose_game:
+            case "1":
+                multiplayer.game()
+            case "2":
+                singleplayer.game()
+            case "0":
+                print("Thank you for playing!")
+                sys.exit()
+            case other:
+                print("No match found")
+                print("Try again!")
+
 
 
 def print_board():

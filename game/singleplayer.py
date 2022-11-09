@@ -1,5 +1,6 @@
 from globals import BOARD, print_board
 from multiplayer import make_move, valid_choice, check_win
+from computers import computer_move
 
 
 def single_game():
@@ -57,7 +58,11 @@ def single_game():
                 break
         else:
             # computer turn
-            ...
+            computer_move(level, computer)
+            print_board()
+            if check_win():
+                print("CONGRATULATIONS FOR COMPUTER!!")
+                break
         if counter == end:
             print("DRAW!")
             break

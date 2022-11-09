@@ -1,7 +1,7 @@
 import sys
 
-import multiplayer
-import singleplayer
+from multiplayer import multi_game
+from singleplayer import single_game
 
 from globals import BOARD
 
@@ -20,9 +20,9 @@ def game():
         chose_game = input()
         match chose_game:
             case "1":
-                multiplayer.game()
+                multi_game()
             case "2":
-                singleplayer.game()
+                single_game()
             case "0":
                 print("Thank you, for playing!")
                 sys.exit()
@@ -35,19 +35,6 @@ def init_board():
     for i in range(3):
         for j in range(3):
             BOARD[i][j] = " "
-
-
-def print_board():
-    for i in range(3):
-        for j in range(3):
-            if j != 2:
-                print(f" {BOARD[i][j]} |", end="")
-                continue
-            print(f" {BOARD[i][j]}  ")
-        if i != 2:
-            print("-------------")
-            continue
-        print()
 
 
 if __name__ == "__main__":

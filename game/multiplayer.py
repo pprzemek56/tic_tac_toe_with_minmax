@@ -1,8 +1,7 @@
-from TicTacToe import print_board
-from globals import BOARD
+from globals import BOARD, print_board
 
 
-def game():
+def multi_game():
     print("MULTIPLAYER MODE")
     print("FIRST PLAYER CHOOSES X OR O")
     player_1 = input("Your choice: ").upper()

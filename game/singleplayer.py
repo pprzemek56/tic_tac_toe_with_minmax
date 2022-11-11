@@ -1,9 +1,7 @@
-from globals import BOARD, print_board
-from multiplayer import make_move, valid_choice, check_win
 from computers import computer_move
 
 
-def single_game():
+def single_game(board):
     print("SINGLE PLAYER MODE")
     print("CHOOSE THE DIFFICULTY LEVEL")
     print("1 ----- EASY")
@@ -40,27 +38,29 @@ def single_game():
     print("EACH SQUARE IS NUMERATED FROM 0 TO 8")
     print("STARTING FROM TOP LEFT CORNER")
     print("YOU CAN NOT ACCESS TAKEN SQUARE!")
-    print_board()
+    board.print_board()
 
     while True:
         if counter % 2 == 0:
             # player turn
             try:
                 choice = int(input("PLAYER TURN: "))
-                if not valid_choice(choice):
+                i = int(choice / 3)
+                j = choice % 3
+                if not board.valid_choice(i, j):
                     raise ValueError
             except ValueError:
                 continue
-            make_move(choice, player)
-            print_board()
-            if check_win():
+            board.set_cell(i, j, player)
+            board.print_board()
+            if board.check_win():
                 print("CONGRATULATIONS FOR PLAYER!!")
                 break
         else:
             # computer turn
-            computer_move(level, computer)
-            print_board()
-            if check_win():
+            computer_move(board, level, computer)
+            board.print_board()
+            if board.check_win():
                 print("CONGRATULATIONS FOR COMPUTER!!")
                 break
         if counter == end:

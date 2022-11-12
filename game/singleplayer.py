@@ -1,18 +1,16 @@
-from computers import computer_move
+from computers import computer_move, game_over
 
 
 def single_game(board):
     print("SINGLE PLAYER MODE")
     print("CHOOSE THE DIFFICULTY LEVEL")
     print("1 ----- EASY")
-    print("2 ----- MEDIUM")
-    print("3 ----- HARD")
+    print("2 ----- HARD")
     level = input("LEVEL: ")
-    while level != "1" and level != "2" and level != "3":
+    while level != "1" and level != "2":
         print("Wrong choice, try again!")
         print("1 ----- EASY")
-        print("2 ----- MEDIUM")
-        print("3 ----- HARD")
+        print("2 ----- HARD")
 
     print("CHOOSE SIGN")
     print("X ----- COMPUTER START")
@@ -28,11 +26,9 @@ def single_game(board):
     if player == "O":
         computer = "X"
         counter = 0
-        end = 8
     else:
         computer = "O"
         counter = 1
-        end = 9
 
     print("GOOD LUCK!")
     print("EACH SQUARE IS NUMERATED FROM 0 TO 8")
@@ -53,17 +49,17 @@ def single_game(board):
                 continue
             board.set_cell(i, j, player)
             board.print_board()
-            if board.check_win():
-                print("CONGRATULATIONS FOR PLAYER!!")
-                break
         else:
             # computer turn
             computer_move(board, level, computer)
             board.print_board()
-            if board.check_win():
-                print("CONGRATULATIONS FOR COMPUTER!!")
+
+        if game_over(board.board):
+            if game_over(board.board) == player:
+                print("CONGRATULATIONS PLAYER WIN!")
                 break
-        if counter == end:
-            print("DRAW!")
-            break
+            elif game_over(board.board) == computer:
+                print("COMPUTER WIN!")
+                break
+            print("DRAW!!")
         counter += 1

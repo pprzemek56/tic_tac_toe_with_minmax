@@ -13,7 +13,7 @@ def main():
 def game():
     print("WELLCOME IN TIC TAC TOE")
     while True:
-        board = Board([["O", "X", " "], ["O", "X", " "], [" ", " ", " "]])
+        board = Board([[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]])
         print("CHOSE 1 FOR MULTIPLAYER GAME")
         print("CHOSE 2 FOR SINGLE PLAYER GAME")
         print("CHOSE 0 FOR END GAME")

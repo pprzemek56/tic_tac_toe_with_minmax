@@ -34,11 +34,12 @@ def single_game(board):
     print("EACH SQUARE IS NUMERATED FROM 0 TO 8")
     print("STARTING FROM TOP LEFT CORNER")
     print("YOU CAN NOT ACCESS TAKEN SQUARE!")
-    board.print_board()
 
     while True:
         if counter % 2 == 0:
             # player turn
+            if counter == 0:
+                board.print_board()
             try:
                 choice = int(input("PLAYER TURN: "))
                 i = int(choice / 3)

@@ -34,7 +34,7 @@ def hard(board, computer):
                 continue
             temp_board = copy_board(position)
             temp_board[i][j] = computer
-            result = minimax(temp_board, 2, -10, 10, False, computer, player)
+            result = minimax(temp_board, 10, -10, 10, False, computer, player)
             temp_board[i][j] = " "
             if result > max_value:
                 max_value = result

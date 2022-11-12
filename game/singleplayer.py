@@ -63,4 +63,5 @@ def single_game(board):
                 print("COMPUTER WIN!")
                 break
             print("DRAW!!")
+            break
         counter += 1

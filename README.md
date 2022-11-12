@@ -4,6 +4,8 @@ Console version of game tic tac toe with algorith minimax and alpha beta pruning
 Game has two mods 
   1. single player 
   2. multiplayer
+  
+In multiplayer mode you can play with second person on the same computer.
 
 In single player mode player has two levels of difficulty:
   1. easy - computer randomly chooses from free fields.
